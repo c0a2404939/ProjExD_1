@@ -40,14 +40,15 @@ def main():
         if key_lst[pg.K_s]:
             kk_rect.move_ip((0, 1))
         if key_lst[pg.K_d]:
-            kk_rect.move_ip((1, 0))
+            kk_rect.move_ip((2, 0))
 
+        kk_rect.move_ip((-1, 0))
         screen.blit(kk_img, kk_rect)
 
 
         pg.display.update()
         tmr += 1        
-        clock.tick(400)
+        clock.tick(200)
 
 
 if __name__ == "__main__":
