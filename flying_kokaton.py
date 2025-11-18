@@ -43,9 +43,10 @@ def main():
             dy += 1
         if key_lst[pg.K_d]:
             dx += 2
+
+        dx -= 1
         kk_rect.move_ip(dx, dy)
 
-        kk_rect.move_ip((-1, 0))
         screen.blit(kk_img, kk_rect)
 
 
