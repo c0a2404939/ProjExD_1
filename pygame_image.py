@@ -11,6 +11,8 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
 
+    bg_rect = bg_img.get_rect()
+
     kk_img = pg.image.load("fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, False)
 
@@ -19,8 +21,13 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
+        bg_rect.move_ip(-1, 0)
+        screen.blit(bg_img, bg_rect)
+
         screen.blit(kk_img, [300, 200])
+
+        
+
         pg.display.update()
         tmr += 1        
         clock.tick(10)
