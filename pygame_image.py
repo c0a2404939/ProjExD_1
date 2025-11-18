@@ -13,6 +13,9 @@ def main():
     bg_img = pg.image.load("fig/pg_bg.jpg")
     bg_rect = bg_img.get_rect()
 
+    bg_img2 = pg.image.load("fig/pg_bg.jpg")
+    bg_img2 = pg.transform.flip(bg_img2, True, False)
+
     kk_img = pg.image.load("fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, False)
 
@@ -23,7 +26,7 @@ def main():
 
         x = tmr
         screen.blit(bg_img, [-x, 0])
-        screen.blit(bg_img, [1600-x, 0])
+        screen.blit(bg_img2, [1600-x, 0])
 
         screen.blit(kk_img, [300, 200])
 
