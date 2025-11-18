@@ -24,9 +24,10 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        x = tmr
+        x = tmr % 3200
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img2, [1600-x, 0])
+        screen.blit(bg_img, [3200-x, 0])
 
         screen.blit(kk_img, [300, 200])
 
