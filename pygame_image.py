@@ -9,8 +9,8 @@ def main():
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
-    bg_img = pg.image.load("fig/pg_bg.jpg")
 
+    bg_img = pg.image.load("fig/pg_bg.jpg")
     bg_rect = bg_img.get_rect()
 
     kk_img = pg.image.load("fig/3.png")
@@ -21,14 +21,16 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        bg_rect.move_ip(-1, 0)
-        screen.blit(bg_img, bg_rect)
+        x = tmr
+        screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img, [1600-x, 0])
 
         screen.blit(kk_img, [300, 200])
 
+
         pg.display.update()
         tmr += 1        
-        clock.tick(200)
+        clock.tick(400)
 
 
 if __name__ == "__main__":
