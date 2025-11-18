@@ -33,14 +33,17 @@ def main():
         screen.blit(bg_img, [3200-x, 0])
 
         key_lst = pg.key.get_pressed()
+        dx = 0
+        dy = 0
         if key_lst[pg.K_w]:
-            kk_rect.move_ip((0, -1))
+            dy -= 1
         if key_lst[pg.K_a]:
-            kk_rect.move_ip((-1, 0))
+            dx -= 1
         if key_lst[pg.K_s]:
-            kk_rect.move_ip((0, 1))
+            dy += 1
         if key_lst[pg.K_d]:
-            kk_rect.move_ip((2, 0))
+            dx += 2
+        kk_rect.move_ip(dx, dy)
 
         kk_rect.move_ip((-1, 0))
         screen.blit(kk_img, kk_rect)
